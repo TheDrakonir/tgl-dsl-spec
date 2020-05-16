@@ -97,6 +97,25 @@ The Trakko Generation Language (in short TGL) is a markup DSL inspired by JSON a
   - Specifies the way objects should be compared to equality.
   - **`STRATEGY`**: Either `recursive` [**default**] comparing values and object types recursively whether they are equal, or `$FIELD_NAME` to compare the given field or fields (if multiple) to check for equality (`FIELD_NAME` needs to be substituted with the name of the desired field).
 
+- endpoint {*OPTION_1*, *OPTION_2*}
+  - Giving details about an endpoint.
+  - **`OPTIONS`**:
+    - path: '*PATH*'
+      - Specifing the path where the endpoint is located at.
+      - **`PATH`**: Path string seperated by `/` characters.
+    - method: '*METHOD*'
+      - Defining the http method for the endpoint.
+      - **`METHOD`** A valid http method e.g. `GET` or `POST`.
+    - request-data-format: '*FORMAT*'
+      - If given a value, this will mark the endpoint to be in need of request data in the supplied format.
+      - **`FORMAT`**: Format string after the mime-type format e.g. `text/plain` or `application/json`.
+    - success-response: '*CODE*'
+      - Lists the response code which will be returned after a succesful operation.
+      - **`CODE`**: A http status code number e.g. `200` or `404`.
+    - response-data-format: '*FORMAT*'
+      - If given a value, this will give details about the response data format.
+      - **`FORMAT`**: Format string after the mime-type format e.g. `text/plain` or `application/json`.
+
 ---
 ## **2.3 Examples**
 
